@@ -1,0 +1,71 @@
+<html>
+<head>
+    <title>JMJM</title>
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/quiz.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase.js"></script>
+    <script src="./js/firebase/init.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="js/quiz.js"></script>
+</head>
+<body>
+    <div id="collage">
+        <h2>Puzzle Test</h2>
+        <hr />
+        <div id="playPanel" style="padding:5px;display:none;">
+            <h3 id="imgTitle"></h3> <hr />
+            <div style="display:inline-block; margin:auto; width:95%; vertical-align:top;">
+                <ul id="sortable" class="sortable"></ul>
+                <div id="actualImageBox">
+                    <div id="stepBox">
+                        <div>Steps:</div><div class="stepCount">0</div>
+                    </div>
+                    <div id="timeBox">
+                        Time Taken: <span id="timerPanel"></span> secs
+                    </div>
+                    <img id="actualImage" />
+                    <div>Re-arrange to create a picture like this.</div>
+                    <p id="levelPanel">
+                        <input type="radio" name="level" id="easy" checked="checked" value="3" /> <label for="easy">Easy</label>
+                        <input type="radio" name="level" id="medium" value="4" /> <label for="medium">Medium</label>
+                        <input type="radio" name="level" id="hard" value="5" /> <label for="hard">Hard</label>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div id="gameOver" style="display:none;">
+            <div style="background-color: #fc9e9e; padding: 5px 10px 20px 10px; text-align: center; ">
+                <h2 style="text-align:center">결과 화면</h2>
+                Congratulations!! <br /> You have completed this picture.
+                <br />
+                Steps: <span class="stepCount">0</span> steps.
+                <br />
+                Time Taken: <span class="timeCount">0</span> seconds<br />
+                <div>
+                    <button type="button" onclick="window.location.reload(true);">Play Again</button>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            var image = /* 사용자가 선택한 파일 */
+
+            $(function () {
+                var gridSize = $('#levelPanel :radio:checked').val();
+                imagePuzzle.startGame(image, gridSize);
+                $('#newPhoto').click(function () {
+                    var gridSize = $('#levelPanel :radio:checked').val();  // Take the updated gridSize from UI.
+                    imagePuzzle.startGame(image, gridSize);
+                });
+
+                $('#levelPanel :radio').change(function (e) {
+                    var gridSize = $(this).val();
+                    imagePuzzle.startGame(image, gridSize);
+                });
+            });
+        </script>
+    </div>
+</body>
+</html>
