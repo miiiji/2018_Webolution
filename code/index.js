@@ -1,7 +1,3 @@
-function showPopup() {
-     window.open("login.html", "a", "width=100, height=100, left=100, top=50");
-}
-
 
   //sign up 하는 함수 
   function signUp() {
@@ -22,9 +18,8 @@ function showPopup() {
                         E_mail : id
                 }
                 userRef.set(data);
-                console.log(id.split('@')[0]);
-                
-                location.href="./TP_2.html";
+                console.log(id.split('@')[0]); 
+                location.href="./Main.html";
                 
             })
             .catch(function(e) {
@@ -44,7 +39,7 @@ function showPopup() {
             .then(function() {
                 $("#signIn").hide();
                 $("#authorized").show();
-                location.href="./TP_2.html";
+                location.href="./Main.html";
             })
             .catch(function(e) {
                 lastWork = "signIn";
@@ -63,4 +58,3 @@ firebase.auth().onAuthStateChanged(function(user) {
     	document.getElementById("log-button").style.color= "rgb(233,65,103)";
     }
   });
-

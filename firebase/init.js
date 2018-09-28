@@ -1,4 +1,5 @@
 
+  // Initialize Firebase
   var config = {
     apiKey: "AIzaSyBVPSjURoYlQqrWLmEdnxfBHZl26Zm7EAg",
     authDomain: "webolution-2b82e.firebaseapp.com",
@@ -9,7 +10,6 @@
   };
   firebase.initializeApp(config);
   var database = firebase.database();
-
   //sign out
 function signOut() {
     if(!confirm("Do you really want to log out?")) {
