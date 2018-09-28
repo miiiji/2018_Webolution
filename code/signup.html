@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--<link rel="stylesheet" href="./login.css" type="text/css">-->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title></title>
+  </head>
+  <body>
+<section id="main">
+        <section id="center" class="input_form">
+        <div class="container-contact100" >
+          <div class="wrap-contact100">
+              <span class="avatar">
+                <!--미팅정보 등록하려는 div -->
+                <h1>간편한 회원가입</h1>
+              </span>
+              <!--미팅정보 입력하는 input text-->
+  
+              <div id="signUp">
+                  <label for="su_id">ID: </label><input class="input100" type="email" id="su_id" /><br />
+                  <label for="su_pw">PW: </label><input class="input100" type="password" id="su_pw" /><br />
+                  <label for="su_cf">PW Confirm: </label><input class="input100" type="password" id="su_cf" /><br />
+                         <button type="button" class="d-secondaryButton" id="signinbutton">
+                            <div>
+                              <a id="log-in"  class="insert" onclick="signUp()">Sign up</a>
+                            </div>
+                        </button>
+              </div>
+              <div id="error">
+                  An error occurred: <span id="errmsg"></span>
+              </div>
+          </div>
+        </div>
+      </section>
+        </section>
+    <!--회원가입페이지, 아이디 비번 비번확인 정보 저장해서 button Click 하여 signup function호출--><script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase.js"></script>
+    <script src="../firebase/init.js"></script>
+    <script src="./index.js"></script>
+</body>
+
+</html>

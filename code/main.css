@@ -1,0 +1,19 @@
+/*button들에 대한 CSS*/
+#log-button,#logout-button{
+    margin-left: 8px;
+  }
+  #log-button, #sign-button, #logout-button{
+    border-radius: 10px;
+    background-color: pink;
+    border-color: pink;
+  }
+  #log-in, #sign-in, #log-out{
+    color: rgb(233,65,103);
+    font-family: "Source Sans Pro", Helvetica, sans-serif;
+    font-size: 13pt;
+    font-weight: 200;
+    line-height: 1.65;
+    border-style: none;
+
+    display: inline-block;
+  }
