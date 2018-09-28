@@ -27,28 +27,22 @@ firebase.auth().onAuthStateChanged(function(user) {
         // Or inserted into an <img> element:
         // var img = document.getElementById('myimg');
         // img.src = url;
-
         console.log(url);
-
       })
   // Insert url into an <img> tag to "download"
 .catch(function(error) {
   switch (error.code) {
     case 'storage/object_not_found':
-
       console.log(" File doesn't exist")
       break;
-
     case 'storage':
     console.log("User doesn't have permission to access the object")
       // 
       break;
-
     case 'storage/canceled':
     console.log("User canceled the upload")
       // 
       break;
-
     case 'storage/unknown':
     console.log("Unknown error occurred, inspect the server response")
       // 

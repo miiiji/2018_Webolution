@@ -1,5 +1,3 @@
-
-
   //sign up 하는 함수 
   function signUp() {
     var id = $("#su_id").val();
