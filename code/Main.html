@@ -1,40 +1,44 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title></title>
-        <link rel="stylesheet" href="./main.css">
-        
-    </head>
-    <body>
-        <!--header-->
-        <header>
-            <!--헤더의 로그인 부분-->
-            <div class="d-fullHeader">
-              <button type="button" class="d-secondaryButton" id="sign-button">
-                 <div>
-                   <a href="./signup.html"  id="sign-in">sign up</a>
-                 </div>
-             </button>
-             <button type="button" class="d-secondaryButton" id="log-button">
-                <div>
-                  <a id="log-in"  class="insert" href="./login.html">log in</a>
-                </div>
-            </button>
-            <button type="button" class="d-secondaryButton" id="logout-button">
-                <div>
-                  <a id="log-out" onclick="signOut()">log out</a>
-                </div>
-            </button>
-            </div> 
 
-            </header>
-            <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase.js"></script>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" href="./main.css">
 
-        <script src="../firebase/init.js"></script>
-        <script src="./index.js"></script>
-        <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
-        <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-  
-    </body>
+</head>
+
+<body>
+  <!--header-->
+  <header>
+    <!--헤더의 로그인 부분-->
+    <div class="d-fullHeader">
+      <button type="button" class="d-secondaryButton" id="sign-button">
+        <div>
+          <a href="./signup.html" id="sign-in">sign up</a>
+        </div>
+      </button>
+      <button type="button" class="d-secondaryButton" id="log-button">
+        <div>
+          <a id="log-in" class="insert" href="./login.html">log in</a>
+        </div>
+      </button>
+      <button type="button" class="d-secondaryButton" id="logout-button">
+        <div>
+          <a id="log-out" onclick="signOut()">log out</a>
+        </div>
+      </button>
+    </div>
+
+  </header>
+
+    <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase.js"></script>
+
+    <script src="../firebase/init.js"></script>
+    <script src="./index.js"></script>
+    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+</body>
+
 </html>
