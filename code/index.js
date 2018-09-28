@@ -62,8 +62,5 @@ firebase.auth().onAuthStateChanged(function(user) {
     	document.getElementById("log-button").innerHTML = user.email+"님 환영합니다.";
     	document.getElementById("log-button").style.color= "rgb(233,65,103)";
     }
-    else{
-   		alert("로그인이 필요합니다.");
-    }
   });
 
