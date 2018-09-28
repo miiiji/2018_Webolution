@@ -1,5 +1,62 @@
 var timerFunction;
 
+
+//현재 로그인 상태를 감지해서 로그인이 되었으면 화면에 띄우고 아니면 경고창 띄우는 함수 
+firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+    	document.getElementById("log-button").innerHTML = user.email+"님 환영합니다.";
+    	document.getElementById("log-button").style.color= "rgb(233,65,103)";
+    }
+  });
+
+  var storage = firebase.storage();
+  var storageRef = firebase.storage().ref();
+
+    storageRef.child('Language/Java/01.png').getDownloadURL().then(function(url) {
+
+        // `url` is the download URL for 'images/stars.jpg'
+        // This can be downloaded directly:
+        var xhr = new XMLHttpRequest();
+        xhr.responseType = 'blob';
+        xhr.onload = function(event) {
+          var blob = xhr.response;
+        };
+        xhr.open('GET', url);
+        xhr.send();
+
+        // Or inserted into an <img> element:
+        // var img = document.getElementById('myimg');
+        // img.src = url;
+
+        console.log(url);
+
+      })
+  // Insert url into an <img> tag to "download"
+.catch(function(error) {
+  switch (error.code) {
+    case 'storage/object_not_found':
+
+      console.log(" File doesn't exist")
+      break;
+
+    case 'storage':
+    console.log("User doesn't have permission to access the object")
+      // 
+      break;
+
+    case 'storage/canceled':
+    console.log("User canceled the upload")
+      // 
+      break;
+
+    case 'storage/unknown':
+    console.log("Unknown error occurred, inspect the server response")
+      // 
+      break;
+  }
+}); 
+
+
 var imagePuzzle = {
     stepCount: 0,
     startTime: new Date().getTime(),
