@@ -8,8 +8,22 @@
     storageBucket: "webolution-2b82e.appspot.com",
     messagingSenderId: "22529361245"
   };
+
   firebase.initializeApp(config);
   var database = firebase.database();
+
+  var ref = database.ref('game/');
+
+ref.once('value').then(function(snapshot){
+		snapshot.forEach(function(childSnapshot){
+		    var childKey = childSnapshot.key;
+		    var childData = childSnapshot.val();
+            console.log(childKey);
+            console.log(childData);
+		});
+	});
+  
+
   //sign out
 function signOut() {
     if(!confirm("Do you really want to log out?")) {
